@@ -61,15 +61,17 @@ class Window(QMainWindow):
         self.label.setFont(QFont('Times', 20))
 
         # creating push button to restart the board
-        reset_game = QPushButton("Reset-Game", self)
+        reset_game = QPushButton("Reset_Game", self)
         reset_game.setGeometry(50, 380, 200, 50)
         reset_game.clicked.connect(self.reset_game_action)
 
         # creating push button to reset the score
-        reset_score = QPushButton("Reset-Score", self)
+        reset_score = QPushButton("Reset_Score", self)
         reset_score.setGeometry(50, 460, 200, 50)
         reset_score.clicked.connect(self.reset_score_action)
 
+        font = QtGui.QFont()
+        font.setPointSize(15)
         # creating label for both players
         self.label_player1 = QLabel(self)
         self.label_player1.setGeometry(20, 550, 100, 60)
@@ -78,18 +80,20 @@ class Window(QMainWindow):
                                  "border : 3px solid black;"
                                  "background : red;"
                                  "}")
-        self.label_player1.setText("Player 1")
+        self.label_player1.setText("Player O")
         self.label_player1.setAlignment(Qt.AlignCenter)
+        self.label_player1.setFont(font)
 
         self.label_player2 = QLabel(self)
         self.label_player2.setGeometry(170, 550, 100, 60)
         self.label_player2.setStyleSheet("QLabel"
                                  "{"
                                  "border : 3px solid black;"
-                                 "background : blue;"
+                                 "background : yellow;"
                                  "}")
-        self.label_player2.setText("Player 2")
+        self.label_player2.setText("Player X")
         self.label_player2.setAlignment(Qt.AlignCenter)
+        self.label_player2.setFont(font)
 
         # creating labels to show the scores of each player
         font = QtGui.QFont()
